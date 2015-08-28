@@ -1,0 +1,30 @@
+.jumbotron {
+  background-color: #000000;
+  border: 1px solid #7CFC00;
+  h2 {
+      color: #7CFC00;
+      font-weight: bold;
+   }
+}
+
+.navbar-default {
+  .container-fluid {
+    background-color: #000000;
+    .navbar-nav > li > a {
+      color: #7CFC00;
+      font-size: 16px;
+      font-weight: bold;
+    }
+    .navbar-brand {
+        color: black;
+        font-size: 30px;
+        font-weight: bold;
+        font-family: 'Rock Salt';
+        text-shadow: 2px 0 0 #7CFC00, -2px 0 0 #7CFC00, 0 2px 0 #7CFC00, 0 -2px 0 #7CFC00, 1px 1px #7CFC00, -1px -1px 0 #7CFC00, 1px -1px 0 #7CFC00, -1px 1px 0 #7CFC00;        
+    }
+  }
+}
+
+.container-fluid {
+    padding: 10px 120px;
+}
