@@ -1,0 +1,24 @@
+<p id="notice"><%= notice %></p>
+
+<p>
+  <strong>Brand:</strong>
+  <%= @sneaker.brand %>
+</p>
+
+<p>
+  <strong>Name:</strong>
+  <%= @sneaker.name %>
+</p>
+
+<p>
+  <strong>Style:</strong>
+  <%= @sneaker.style %>
+</p>
+
+<p>
+  <strong>Buy:</strong>
+  <%= @sneaker.buy %>
+</p>
+
+<%= link_to 'Edit', edit_sneaker_path(@sneaker),class: "btn btn-link" %> |
+<%= link_to 'Back', sneakers_path,class: "btn btn-link" %>
