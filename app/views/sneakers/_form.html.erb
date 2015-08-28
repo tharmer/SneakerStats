@@ -1,4 +1,4 @@
-<%= form_for(@sneaker) do |f| %>
+<%= form_for(@sneaker, :html => { multipart: true }) do |f| %>
   <% if @sneaker.errors.any? %>
     <div id="error_explanation">
       <h2><%= pluralize(@sneaker.errors.count, "error") %> prohibited this sneaker from being saved:</h2>
@@ -27,6 +27,10 @@
     <%= f.label :buy %><br>
     <%= f.text_field :buy, class: "form-control" %>
   </div>
+  <div class="form-group"> 
+    <%= f.label :image %><br> 
+    <%= f.file_field :image, class: "form-control" %> 
+   </div>
   <div class="actions">
     <%= f.submit class: "btn btn-primary" %>
   </div>
