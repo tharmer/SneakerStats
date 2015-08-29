@@ -1,5 +1,7 @@
 class SneakersController < ApplicationController
   before_action :set_sneaker, only: [:show, :edit, :update, :destroy]
+  before_action :authenticate_user!, except: [:index, :show]
+  before_action :check_user, except: [:index, :show]
 
   # GET /sneakers
   # GET /sneakers.json
@@ -10,6 +12,12 @@ class SneakersController < ApplicationController
   # GET /sneakers/1
   # GET /sneakers/1.json
   def show
+    @reviews = Review.where(sneaker_id: @sneaker.id).order("created_at DESC")
+    if @reviews.blank?
+      @avg_rating = 0
+    else
+      @avg_rating = @reviews.average(:rating).round(2)
+    end
   end
 
   # GET /sneakers/new
@@ -65,6 +73,12 @@ class SneakersController < ApplicationController
     # Use callbacks to share common setup or constraints between actions.
     def set_sneaker
       @sneaker = Sneaker.find(params[:id])
+    end
+
+    def check_user
+      unless current_user.admin?
+          redirect_to root_url, alert: "Sorry, only admins can do that!"
+      end
     end
 
     # Never trust parameters from the scary internet, only allow the white list through.

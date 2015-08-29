@@ -1,3 +1,7 @@
 class Sneaker < ActiveRecord::Base
   mount_uploader :image, ImageUploader
-end
+  has_many :reviews
+    validates :brand, :name, :style, :buy, :image, presence: true
+    validates :buy, format: { with: /\Ahttps?:\/\/.*\z/,
+      message: "must start with http:// or https://" }
+  end

@@ -1,7 +1,8 @@
 <%= form_for(@sneaker, :html => { multipart: true }) do |f| %>
   <% if @sneaker.errors.any? %>
-    <div id="error_explanation">
-      <h2><%= pluralize(@sneaker.errors.count, "error") %> prohibited this sneaker from being saved:</h2>
+  <div id="error_explanation" class= "alert alert-danger alert-dismissable">
+  <button type="button" class="close" data-dismiss="alert"><span aria-hidden="true">&times;</span><span class="sr-only">Close</span></button>
+    <h4><%= pluralize(@sneaker.errors.count, "error") %> prohibited this sneaker from being saved:</h4>
 
       <ul>
       <% @sneaker.errors.full_messages.each do |message| %>
@@ -13,19 +14,19 @@
 
   <div class="form-group">
     <%= f.label :brand %><br>
-    <%= f.text_field :brand, class: "form-control" %>
+    <%= f.text_field :brand, class: "form-control", placeholder: "Nike" %>
   </div>
   <div class="form-group">
     <%= f.label :name %><br>
-    <%= f.text_field :name, class: "form-control" %>
+    <%= f.text_field :name, class: "form-control", placeholder: "Nike"  %>
   </div>
   <div class="form-group">
     <%= f.label :style %><br>
-    <%= f.text_field :style, class: "form-control" %>
+    <%= f.text_field :style, class: "form-control", placeholder: "Nike"  %>
   </div>
   <div class="form-group">
     <%= f.label :buy %><br>
-    <%= f.text_field :buy, class: "form-control" %>
+    <%= f.text_field :buy, class: "form-control", placeholder: "Nike"  %>
   </div>
   <div class="form-group"> 
     <%= f.label :image %><br> 
