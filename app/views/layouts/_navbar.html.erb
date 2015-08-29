@@ -15,8 +15,11 @@
 	    <li><%= link_to "About", pages_about_path %></li>
 	    <li><%= link_to "Contact", pages_contact_path %></li>
 	  </ul>
-
+      
 	    <ul class="nav navbar-nav navbar-right">
+		<a href="https://instagram.com/sneakerstats_com/" target="parent"><img src="https://s3.amazonaws.com/sneakerstats/icons/Instagram_Icon_Large.png"></a>
+		<a href="https://www.facebook.com/sneakerstats" target="parent"><img src="https://s3.amazonaws.com/sneakerstats/icons/FB-f-Logo__blue_50.png"></a>
+		<a href="https://twitter.com/sneakerstatscom" target="parent">	<img src="https://s3.amazonaws.com/sneakerstats/icons/TwitterLogo_%2355acee.png"></a>
         <% if user_signed_in? %>
           <li><%= link_to "Edit Profile", edit_user_registration_path %></li>
           <li><%= link_to "Sign out", destroy_user_session_path, method: :delete %></li>

@@ -4,8 +4,14 @@ body{
 }
 
 alert {
-
 }
+
+tr:hover td {
+  background-color: #fff;
+  color: #000;
+  a{color: #428bca;}
+}
+
 
 a {
     color: #7CFC00;
