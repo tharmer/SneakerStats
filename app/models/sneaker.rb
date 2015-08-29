@@ -1,5 +1,8 @@
 class Sneaker < ActiveRecord::Base
   mount_uploader :image, ImageUploader
+  
+  searchkick
+  
   has_many :reviews
     validates :brand, :name, :style, :buy, :image, presence: true
     validates :buy, format: { with: /\Ahttps?:\/\/.*\z/,

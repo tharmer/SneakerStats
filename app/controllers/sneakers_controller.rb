@@ -1,7 +1,16 @@
 class SneakersController < ApplicationController
   before_action :set_sneaker, only: [:show, :edit, :update, :destroy]
-  before_action :authenticate_user!, except: [:index, :show]
-  before_action :check_user, except: [:index, :show]
+  before_action :authenticate_user!, except: [:search, :index, :show]
+  before_action :check_user, except: [:search, :index, :show]
+
+  def search
+    if params[:search].present?
+      @sneakers = Sneaker.search(params[:search])
+    else
+      @sneakers = Sneaker.all
+    end
+  end
+
 
   # GET /sneakers
   # GET /sneakers.json
@@ -74,6 +83,8 @@ class SneakersController < ApplicationController
     def set_sneaker
       @sneaker = Sneaker.find(params[:id])
     end
+
+
 
     def check_user
       unless current_user.admin?

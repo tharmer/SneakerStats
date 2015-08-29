@@ -32,6 +32,7 @@ gem "fog"
 gem "figaro"
 # Use Capistrano for deployment
 # gem 'capistrano-rails', group: :development
+gem 'searchkick'
 gem "mini_magick"
 gem 'devise'
 group :development, :test do
