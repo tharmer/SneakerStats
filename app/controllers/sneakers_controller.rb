@@ -3,13 +3,6 @@ class SneakersController < ApplicationController
   before_action :authenticate_user!, except: [:search, :index, :show]
   before_action :check_user, except: [:search, :index, :show]
 
-  def search
-    if params[:search].present?
-      @sneakers = Sneaker.search(params[:search])
-    else
-      @sneakers = Sneaker.all
-    end
-  end
 
 
   # GET /sneakers
