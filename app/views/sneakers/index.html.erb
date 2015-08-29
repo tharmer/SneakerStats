@@ -21,7 +21,7 @@
     <% @sneakers.each do |sneaker| %>
       <tr>
         <td><%= sneaker.brand%></td>
-        <td><%= link_to sneaker.name %></td>
+        <td><%= link_to sneaker.name, sneaker %></td>
         <td><%= sneaker.style %></td>
         <td><%= link_to sneaker.buy, sneaker.buy %></td> 
         <% if user_signed_in? && current_user.admin? %>
