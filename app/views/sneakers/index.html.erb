@@ -4,6 +4,13 @@
   <h3>Share your experiences with the styles you love.
   <br>Leave reviews and ratings for your fellow sneakerheads.</h3>
 </div>
+
+
+	<form id="live-search" role="search" method="post">
+	<input type="text" class="form-control" placeholder="Start Typing to Filter Results"/>
+	</div>
+	</form>
+<div class="container-fluid">
 <table class="table table-hover table-condensed">
   <thead>
     <tr>
@@ -17,7 +24,7 @@
     </tr>
   </thead>
 
-  <tbody>
+  <tbody class = "searchable">
     <% @sneakers.each do |sneaker| %>
       <tr>
         <td><%= sneaker.brand%></td>
@@ -38,3 +45,13 @@
 <% if user_signed_in? && current_user.admin? %>
   <%= link_to 'New Sneaker', new_sneaker_path, class: "btn btn-link" %>
 <% end %>
+</div>
+<script>
+$('input.form-control').on('keyup', function() {
+    var rex = new RegExp($(this).val(), 'i');
+    $('.searchable tr').hide();
+    $('.searchable tr').filter(function() {
+    return rex.test($(this).text());
+    }).show();
+    });
+</script>
