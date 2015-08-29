@@ -1,6 +1,22 @@
 body{
- background-color: #B0B0B0  ;
- color: #5D5B5B;
+ background-color: #545454  ;
+ color: #fff;
+}
+
+a {
+    color: #7CFC00;
+}
+
+table{
+	order-bottom: 2px
+	color #7CFC00;
+}
+
+.btn-link {
+    font-weight: 400;
+    color: #7CFC00;
+    cursor: pointer;
+    border-radius: 0;
 }
 
 .img {
@@ -25,8 +41,9 @@ body{
   .container-fluid {
     background-color: #000000;
     .navbar-nav > li > a {
-      color: #7CFC00;
-      font-size: 16px;
+      color: #fff;
+      font-family: 'Rock Salt';
+      font-size: 12px;
       font-weight: bold;
       
     }
