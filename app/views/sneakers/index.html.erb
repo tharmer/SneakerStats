@@ -22,7 +22,7 @@
         <td><%= sneaker.brand %></td>
         <td><%= sneaker.name %></td>
         <td><%= sneaker.style %></td>
-        <td><%= sneaker.buy %></td>
+        <td><%= link_to sneaker.buy, sneaker.buy %></td> 
         <td><%= link_to 'Show', sneaker %></td>
         <td><%= link_to 'Edit', edit_sneaker_path(sneaker) %></td>
         <td><%= link_to 'Destroy', sneaker, method: :delete, data: { confirm: 'Are you sure?' }, class: "btn btn-link" %></td>
