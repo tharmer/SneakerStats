@@ -1,9 +1,9 @@
 class ReviewsController < ApplicationController
  
-  before_action :authenticate_user!
-  before_action :check_user, only: [:edit, :update, :destroy] 
-  before_action :set_review, only: [:edit, :update, :destroy]
   before_action :set_sneaker
+  before_action :set_review, only: [:edit, :update, :destroy]
+  before_action :authenticate_user!
+  before_action :check_user, only: [:edit, :update, :destroy]
   # GET /reviews/new
   def new
     @review = Review.new
@@ -55,12 +55,7 @@ class ReviewsController < ApplicationController
   end
 
   private
-    def check_user
-      unless @review.user == current_user
-        redirect_to root_url, alert: "Sorry, this review belongs to someone else"
-      end
-    end
-   
+  
     def set_sneaker
       @sneaker = Sneaker.find(params[:sneaker_id])
     end  
@@ -74,4 +69,11 @@ class ReviewsController < ApplicationController
     def review_params
       params.require(:review).permit(:rating, :comment)
     end
+    
+    def check_user
+      unless (@review.user == current_user) || (current_user.admin?)
+        redirect_to root_url, alert: "Sorry, this review belongs to someone else"
+      end
+    end
+    
 end
