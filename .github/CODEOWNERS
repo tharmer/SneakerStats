@@ -1,0 +1,18 @@
+# SneakerStats Code Ownership
+# Each line is a file pattern followed by one or more owners.
+
+# Default owners for everything in the repo
+*       @tharmer
+
+# App code
+/app/   @tharmer
+/lib/   @tharmer
+
+# Configuration
+/config/ @tharmer
+
+# Database
+/db/    @tharmer
+
+# Tests
+/test/  @tharmer
